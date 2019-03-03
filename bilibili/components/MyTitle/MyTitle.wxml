@@ -1,0 +1,22 @@
+<!--components/MyTitle/MyTitle.wxml 此为自定义组件，在需要页面的json文件中声明-->
+<!-- 一般自定义组件用于需要重复使用的相同功能或形式的内容 -->
+<view class='my_title'>
+<!-- logo部分 -->
+  <navigator class='logo'>
+    <image class='logo_img' src='../../icons/logo.png' style='width:140rpx;height:60rpx'></image>
+  </navigator>
+<!-- 搜索部分 -->
+  <view class='search_icon'>
+  <image src='../../icons/sousuo.png' style='width:60rpx;height:44rpx'></image>
+  </view>
+
+
+<!-- 用户部分 -->
+<view class='user_icon'>
+  <image src='../../icons/avatar.png' style='width:50rpx;height:60rpx'></image>
+  </view>
+<!-- 下载按钮 -->
+<view class='down_app'>
+下载APP
+</view>
+</view>

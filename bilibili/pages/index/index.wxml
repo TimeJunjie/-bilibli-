@@ -1,0 +1,74 @@
+<!--index.wxml-->
+<!-- 整体 -->
+<view class="main">
+<!-- 公共头部部分 -->
+<MyTitle></MyTitle>
+ <!-- 首页导航部分-->
+ <view class='nav_wrap'>
+  <!-- 自带的滚动区域组件,scroll-x，在横向上滑动 -->
+    <scroll-view class='nav' scroll-x>
+    <!-- 默认数组的当前项的下标变量名默认为 index，数组当前项的变量名默认为 item,所以data-任意名=index -->
+    <view bindtap='activeNav' data-indexid='{{index}}'
+    class="nav_item {{index===currentIndexNav?'active':''}}" 
+    wx:for="{{navList}}" wx:key="key" wx:for-item="item">
+    {{item.text}}{{item.index}}
+    </view>
+    </scroll-view>
+  </view>
+<!-- 轮播图部分 -->
+<view class='swiper'>
+<swiper autoplay='true' indicator-dots='true' circular='true'>
+  <swiper-item wx:for="{{swiperList}}" wx:key="key" wx:for-item="item" >
+    <navigator class='swiper_nav' >
+      <image class='swiper_img' mode='widthFix' src='{{item.imgSrc}}'></image>
+    </navigator>
+  </swiper-item>
+</swiper>
+</view>
+<!-- 视频列表部分 -->
+<view class='videosList'>
+<!-- 添加nav导航组件来起跳转作用 ?背后为变量k=值，此处的id为跳转携带的参数-->
+<navigator class="video_wrap" url="../detail/detail?id={{item.id}}" wx:for="{{videosList}}" wx:key="{{index}}">
+  <!-- 单个视频模块 -->
+  
+     <!-- 图片容器部分 -->
+     <view class='video_image_wrap'>
+       <!-- 图片 -->
+       <image class='video_image' mode="widthFix" src='{{item.imgSrc}}'></image>
+         <!--评论及播放量-->
+         <view class="video_info">
+           <!-- 播放量(图及数值) -->
+           <view class='play_count_wrap'>
+             <!-- 播放图片 -->
+             <text class='fa fa-play-circle-o'></text>
+             <!-- 播放数值 -->
+             <text class='play_count'>{{item.playCount}}</text>
+          </view>
+          <!-- 评论图片及数值-->
+          <view class="coment_count_row">
+             <!-- 评论图标 -->
+             <text class="fa fa-commenting-o"></text>
+             <!-- 评论数值 -->
+             <text class="comment_count">{{item.commentCount}}</text>
+           </view>
+         </view>
+      </view>
+     <!-- 标题部分 -->
+     <view class='video_title'>
+       <text >{{item.desc}}</text>
+     
+     </view>
+  
+</navigator>
+   
+
+  
+  
+
+
+</view>
+
+
+
+
+</view>

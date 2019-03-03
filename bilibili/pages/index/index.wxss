@@ -1,0 +1,92 @@
+/**index.wxss**/
+.main{
+  padding: 10rpx;
+}
+page{color: #666;
+  /* padding: 10rpx; */
+  /* padding: 10px; */
+  }
+/* 首页导航 */
+.nav_wrap{
+
+}
+.nav{
+  white-space: nowrap;/* 文本不进行换行：nowrap;normal为默认空白会被浏览器忽略 */
+  padding: 5rpx 0;
+  /* scroll-x:false; 只能在框架文件上添加*/
+}
+.nav_item{
+  padding: 20rpx 45rpx;
+  font-size: 30rpx;
+  display: inline-block;
+}
+/* 为选中的导航栏加入下划线 */
+.nav_item.active{
+  border-bottom: 5rpx solid #de677b;
+}
+/* 轮播图部分 */
+.swiper{
+  margin-top:10rpx; 
+}
+
+
+.swiper swiper{
+  height: 220rpx;
+}
+.swiper navigator{
+  width: 100%;
+  height: 100%;
+}
+.swiper image{
+  width: 100%;
+  height: 100%;
+  }
+
+/* 视频列表部分 */
+.videosList{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 5rpx;
+  justify-content: space-between;
+}
+.videosList .video_wrap{
+  width: 48%;
+  /* height: ; */
+  margin-bottom: 20rpx;
+}
+
+  /* 图片容器部分 */
+.videosList .video_image_wrap{
+  position: relative;
+}
+
+.video_image{
+  /* width解决照片未缩小问题 */
+  width: 100%;
+
+}
+    /* 播放量及评论压盖效果 */
+
+.videosList .video_image_wrap .video_info{
+  position: absolute;
+  bottom: 10rpx;
+  left: 0;
+  font-size: 24rpx;
+  display: flex;
+  color: white;
+    width: 100%;/* width设置为100为解决盒子长度与图片不一样长的问题 */
+  justify-content: space-around;/* justify-content，盒子的水平分布问题 */
+}
+  /* 标题部分 */
+.videosList .video_title{
+  font-size: 28rpx;
+  display: -webkit-box;/* 定义为盒子显示 */
+  overflow: hidden;
+  white-space: normal;
+  text-overflow: ellipsis;/* ellipsis/string	使用省略号/给定字符串来代表被修剪的文本。*/
+  word-wrap: break-word;/* 允许长单词换行到下一行 */
+  -webkit-line-clamp: 2;  /* 用于显示的行数*/
+  -webkit-box-orient: vertical;/* 设置盒子参考方式为竖直方向 orient，line-clamp,overflow需一起使用*/
+
+}
